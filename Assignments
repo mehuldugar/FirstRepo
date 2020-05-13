@@ -1,0 +1,48 @@
+Problem 0.
+a= str(input('enter your name : '))
+print ('Your name is' ,a)
+
+
+
+
+Problem 1.
+Write a program that computes and prints the 1000th prime number. 
+
+
+l = []
+l.append(2)
+
+i=3
+for i in range (3,10000):
+    if (i % 2 == 0) :
+        continue
+    else :
+        for j in range (2,i):
+            if (i%j==0):
+                break
+        else:
+            l.append(i)
+      
+Problem 1a
+
+code:
+
+l = []
+l.append(2)
+i=3
+n=int(input('enter number'))
+for i in range (3,n):
+    if (i % 2 == 0) :
+        continue
+    else :
+        for j in range (2,i):
+            if (i%j==0):
+                break
+        else:
+            l.append(i)
+            
+            
+total=0
+for ele in range(0, len(l)): 
+    total = total + l[ele] 
+print("Sum of all elements in given list: ", total)     
