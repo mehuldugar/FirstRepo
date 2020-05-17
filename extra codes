@@ -1,0 +1,17 @@
+Bineary search
+
+
+def binary_search(list1,item):
+	first = 0
+	last = len(list1)-1
+	found = False
+	while( first<=last and not found):
+		mid = (first + last)//2
+		if list1[mid] == item :
+			found = True
+		else:
+			if item < list1[mid]:
+				last = mid - 1
+			else:
+				first = mid + 1	
+	return found
