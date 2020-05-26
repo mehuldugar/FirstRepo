@@ -45,4 +45,74 @@ for i in range (3,n):
 total=0
 for ele in range(0, len(l)): 
     total = total + l[ele] 
-print("Sum of all elements in given list: ", total)     
+print("Sum of all elements in given list: ", total)    
+
+
+
+Problem 4
+def nestEggFixed(salary, save, gr, years):
+	savings = []
+	annual_savings = 0.00
+	for i in range(years):
+		if len(savings) == 0:
+			annual_savings = (salary * save * 0.01)
+			savings.append(annual_savings)
+		else:
+			annual_savings = savings[-1] * (1 + 0.01 * gr) + (salary * save * 0.01)
+			savings.append(annual_savings)
+	return savings
+    
+def testNestEggFixed():
+	salary     = 10000
+	save       = 10
+	gr = 15
+	years      = 5
+	savingsRecord = nestEggFixed(salary, save, gr, years)
+	print(savingsRecord)
+    
+    
+    
+def testNestEggVariable():
+	salary      = 10000
+	save        = 10
+	growthRates = [3, 4, 5, 1, 0]
+	savingsRecord = nestEggVariable(salary, save, growthRates)
+	print(savingsRecord)
+    
+    
+    
+def nestEggVariable(salary,save, growthRates):
+	savings = []
+	ay_savings = 0.0
+	for gr in growthRates:
+		if len(savings) == 0:
+			ay_savings = (salary * save * 0.01)
+			savings.append(ay_savings)
+		else: 
+			ay_savings = savings[-1] * (1 + 0.01 * gr) + (salary * save * 0.01)
+			savings.append(ay_savings)
+	return savings
+ 
+ 
+ 
+def testPostRetirement():
+	savings     = 90000
+	growthRates = [8, 5, 2, 5, 10]
+	expenses    = 20000
+	savingsRecord = postRetirement(savings, growthRates, expenses)
+	print(savingsRecord)
+    
+def postRetirement(savings, growthRates, expenses):
+		retfound = []
+		ay_found = 0
+		for gr in growthRates:
+			if len(retfound) == 0:
+				ay_found = savings * (1 + 0.01 * gr) - expenses
+				retfound.append(ay_found)
+			else:
+				ay_found = retfound[-1] * (1 + 0.01 * gr) - expenses
+				retfound.append(ay_found)
+		return retfound
+        
+        
+        
